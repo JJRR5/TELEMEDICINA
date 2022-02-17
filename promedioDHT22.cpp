@@ -21,12 +21,17 @@ void setup() {
   Serial.begin(115000);
   dht.begin();
   serialbt.begin("PEPE CRACK");
+  if(!serialbt.begin("PEPE CRACK")){
+    serialbt.println("Ocurrio un error al iniciar el  Bluetooth");
+  }
 }
 
 void loop() {
-  temp = dht.readTemperature();
-  humedad = dht.readHumidity();
-  promedio();
+  while(serialbt.available()){
+    temp = dht.readTemperature();
+    humedad = dht.readHumidity();
+    promedio();
+  }
 }
 
 void promedio(){
