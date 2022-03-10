@@ -36,9 +36,9 @@ void loop() {
 
   if (prueba != "-1"){
     if(mensaje == 'A'){
-      bt.println(String(temp));
+      bt.println(String(temp)+"C");
     } else if (mensaje == 'B'){
-      bt.println(String(humedad));
+      bt.println(String(humedad)+"%");
     }
     else if(mensaje == 'C'){
       bt.println("");
